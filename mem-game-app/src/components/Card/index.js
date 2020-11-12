@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 //instead of sending props we are destructing to send the exact props required 
-function Card({ handleClick, id, flipped, back, front, height, width }) {
+function Card({ handleClick, id, flipped, type,  height, width }) {
 
     return (
         <div className={`flip-container ${flipped ? "flipped" : ""}`}
             style={{ width, height }}
             onClick={() => { handleClick(id) }}>
             <div className="flipper">
-                <h3>Sample Card- {flipped}</h3>
+                <h3>Sample Card - {type}</h3>
                 <img 
                 style={{ width, height }} 
                 className={flipped ? "front" : "back"} 
-                src={ flipped ? front : back} />
+                // src={ flipped ? front : back}
+                src={ flipped ? "https://static.vecteezy.com/system/resources/thumbnails/000/553/435/small/apple_006.jpg" : type}
+                 />
             </div>
         </div>
     )
@@ -22,6 +24,12 @@ function Card({ handleClick, id, flipped, back, front, height, width }) {
 
 export default Card; 
 
-// Card.propTypes = {
-//     flipped: 
-// }
+Card.propTypes = {
+    handleClick:PropTypes.func.isRequired, 
+    id: PropTypes.number.isRequired,
+    flipped: PropTypes.bool.isRequired,
+    type: PropTypes.string.isRequired, 
+    // back: PropTypes.string.isRequired, 
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+}
