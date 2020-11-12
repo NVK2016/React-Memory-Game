@@ -1,5 +1,5 @@
 import React from 'react';
-import ProTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './style.css';
 
 //instead of sending props we are destructing to send the exact props required 
@@ -19,8 +19,9 @@ function Card({ handleClick, id, flipped, back, front, height, width }) {
         </div>
     )
 }
+
+export default Card; 
+
 // Card.propTypes = {
 //     flipped: 
 // }
-
-export default Card; 

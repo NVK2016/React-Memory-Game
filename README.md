@@ -1,7 +1,7 @@
 # React-Memory-Game
 Building a Memory Game using React and React Hooks (useState, useEffect) 
 
-## Technologies nad technique used to build the application 
+## Technologies and technique used to build the application 
 
 * React 
 * Hooks 
