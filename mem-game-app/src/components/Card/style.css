@@ -4,6 +4,7 @@
     display: inline-block;
     border: 1px solid white;
     background: black;
+    color: white;
 }
 /* flip the inner container when hovering over the outer one */
 /* .flip-container:hover .flipper {

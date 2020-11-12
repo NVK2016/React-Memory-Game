@@ -7,8 +7,8 @@ function App() {
      <h2>Can you remember where the cards are?</h2>
      <Card 
      id={1}
-     width={100}
-     heigh={100} 
+     width={200}
+     heigh={200} 
      back={""} 
      front={"https://static.vecteezy.com/system/resources/thumbnails/000/553/435/small/apple_006.jpg"}
     //  flipped={flipped.includes(1)}

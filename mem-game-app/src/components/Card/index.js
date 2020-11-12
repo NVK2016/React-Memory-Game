@@ -1,14 +1,26 @@
-import React from 'react'; 
-// import './style.css';
+import React from 'react';
+import ProTypes from 'prop-types';
+import './style.css';
 
-function Card(props){
+//instead of sending props we are destructing to send the exact props required 
+function Card({ handleClick, id, flipped, back, front, height, width }) {
 
-    return(
-        <div>
-            <h3>Sample Card</h3>
-            <img src={props.front} />
+    return (
+        <div className={`flip-container ${flipped ? "flipped" : ""}`}
+            style={{ width, height }}
+            onClick={() => { handleClick(id) }}>
+            <div className="flipper">
+                <h3>Sample Card- {flipped}</h3>
+                <img 
+                style={{ width, height }} 
+                className={flipped ? "front" : "back"} 
+                src={ flipped ? front : back} />
+            </div>
         </div>
     )
 }
+// Card.propTypes = {
+//     flipped: 
+// }
 
 export default Card; 
