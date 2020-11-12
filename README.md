@@ -9,4 +9,4 @@ Building a Memory Game using React and React Hooks (useState, useEffect)
     * effects  - side effects 
 * SetTimeout - to revert the cards back to face down after a short delay 
 * JavaScript - addEventListener 
-* CSS - Animations 
+* CSS - Animations for Card Flip Feature
