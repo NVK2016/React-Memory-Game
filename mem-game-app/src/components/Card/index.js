@@ -4,14 +4,16 @@ import './style.css';
 
 //instead of sending props we are destructing to send the exact props required 
 function Card({ handleClick, id, flipped, type,  height, width }) {
-
+console.log(type, height,width)
     return (
-        <div className={`flip-container ${flipped ? "flipped" : ""}`}
+        // <div className={`flip-container ${flipped ? "flipped" : ""}`}
+        <div className="flip-container"
             style={{ width, height }}
             onClick={() => { handleClick(id) }}>
             <div className="flipper">
                 <h3>Sample Card - {type}</h3>
                 <img 
+                alt={type}
                 style={{ width, height }} 
                 className={flipped ? "front" : "back"} 
                 // src={ flipped ? front : back}

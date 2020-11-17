@@ -29,7 +29,7 @@ export default function initializeDeck() {
             return acc
         }, []);
 
-    // console.log(cards);
+    console.log(cards);
 
     //Random order cards 
     return shuffle(cards);

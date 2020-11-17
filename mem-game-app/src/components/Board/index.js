@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 import Card from "../Card";
 
-function Board({ cards, flipped, handleClick }) {
+function Board({ dimension, cards, flipped, handleClick }) {
     return (
         <div className="board">
             {
@@ -14,8 +14,8 @@ function Board({ cards, flipped, handleClick }) {
                         id={card.id}
                         //basically holds the text value of the card 
                         type={card.type}
-                        width={100}
-                        height={100}
+                        width={dimension / 4.5}
+                        height={dimension / 4.5}
                         //  back={card.back} 
                         //  front={"https://static.vecteezy.com/system/resources/thumbnails/000/553/435/small/apple_006.jpg"}
                         flipped={flipped.includes(card.id)}

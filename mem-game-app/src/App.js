@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     resizeBoard()
     setCards(initializeDeck())
+    console.log("pp", cards);
   }, [])
 
   // console.log("App", cards)
