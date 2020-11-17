@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 import Card from "../Card";
 
-function Board({ dimension,disabled, cards, flipped, handleClick }) {
+function Board({ dimension,disabled, solved, cards, flipped, handleClick }) {
     return (
         <div className="board">
             {
@@ -19,8 +19,9 @@ function Board({ dimension,disabled, cards, flipped, handleClick }) {
                         //  back={card.back} 
                         //  front={"https://static.vecteezy.com/system/resources/thumbnails/000/553/435/small/apple_006.jpg"}
                         flipped={flipped.includes(card.id)}
-                        disabled={disabled}
+                        disabled={disabled || solved.includes(card.id)}
                         handleClick={handleClick}
+                        solved={ solved.includes(card.id)}
                     />)
                 })
             }
@@ -35,5 +36,6 @@ Board.propTypes = {
     disabled: PropTypes.bool.isRequired,
     cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     flipped: PropTypes.arrayOf(PropTypes.number).isRequired,
+    solved: PropTypes.arrayOf(PropTypes.number).isRequired,
     handleClick: PropTypes.func.isRequired
 }

@@ -81,6 +81,7 @@ function App() {
         flipped={flipped}
         handleClick={handleClick}
         disabled={disabled}
+        solved={solved}
       />
     </div>
   );
