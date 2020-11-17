@@ -19,25 +19,47 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const resizeListener = window.addEventListener('resize',resizeBoard);
+    const resizeListener = window.addEventListener('resize', resizeBoard);
     //componet didunmout()  we have use return keywork here 
     return () => window.removeEventListener('resize', resizeListener)
-  }); 
+  });
   // console.log("App", cards)
   const handleClick = (id) => {
     setDisabled(true);
     //at any given time can only flip two cards at once 
-    if(flipped.length === 0){
+    if (flipped.length === 0) {
       setFlipped([id]);
-    setDisabled(false);
-
-    }else { 
+      setDisabled(false);
+      // return
+    } else {
       //if clicked card twice 
-      if(sameCardClicked(flipped, id)) return 
+      if (sameCardClicked(id)) return 'click another square';
+      setFlipped([flipped[0], id]);
+      if (isMatch(id)) {
+        setSolved([...solved, flipped[0], id]);
+        resetCards()
+      } else {
+        //waits to two seconds to flip 
+        setTimeout(resetCards, 2000)
+      }
     }
-    
-  }
+  };
+
+  //Checks if same card is clipped do the flipped values contain that card 
   const sameCardClicked = (id) => flipped.includes(id);
+
+  const isMatch = (id) => {
+    const clickedCard = cards.find((card) => card.id === id);
+    const flippedCard = cards.find((card) => flipped[0] === card.id);
+    console.log("isMatch", clickedCard, flippedCard);
+    return flippedCard.type === clickedCard.type;
+  };
+
+  const resetCards = () => {
+    setFlipped([])
+    setDisabled(false)
+  }
+
   const resizeBoard = () => {
     setDimension(
       Math.min(

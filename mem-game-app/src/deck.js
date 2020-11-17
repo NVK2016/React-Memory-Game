@@ -15,13 +15,11 @@ function shuffle(array) {
 export default function initializeDeck() {
     console.log("initializeDeck")
     let id = 0;
-    const cards = ['dog', 'dog', 'hand', 'hand', 'old ', 'old', 'eat', 'eat',
-        'one', 'one', 'red', 'red', 'books', 'books', 'sky', 'sky', 'apple', 'apple',
-        'door', 'door', 'cat', 'cat', 'foot', 'foot', 'new', 'new', 'sleep', 'sleep',
-        'two', 'two', 'orange', 'orange', 'toys', 'toys', 'trees', 'trees', 'banana',
-        'banana', 'wall', 'wall', 'bird', 'bird', 'face', 'face', 'happy', 'happy',
-        'sit', 'sit', 'three', 'three', 'yellow', 'yellow', 'bed', 'bed', 'roads',
-        'roads', 'grape', 'grape', 'floor', 'floor',
+    const cards = ['dog', 'dog', 'hand', 'hand', 
+         'books', 'books', 'sky', 'sky', 'apple', 'apple',
+        'door', 'door', 'cat', 'cat', 'foot', 'foot', 
+         'orange', 'orange', 'toys', 'toys', 'trees', 'trees', 
+        'three', 'three', 'yellow', 'yellow', 'grape', 'grape', 'floor', 'floor',
         'fox', 'fox'].reduce((acc, type) => {
             acc.push({
                 id: id++,
@@ -35,3 +33,12 @@ export default function initializeDeck() {
     //Random order cards 
     return shuffle(cards);
 }
+
+// const cards = ['dog', 'dog', 'hand', 'hand', 'old ', 'old', 'eat', 'eat',
+// 'one', 'one', 'red', 'red', 'books', 'books', 'sky', 'sky', 'apple', 'apple',
+// 'door', 'door', 'cat', 'cat', 'foot', 'foot', 'new', 'new', 'sleep', 'sleep',
+// 'two', 'two', 'orange', 'orange', 'toys', 'toys', 'trees', 'trees', 'banana',
+// 'banana', 'wall', 'wall', 'bird', 'bird', 'face', 'face', 'happy', 'happy',
+// 'sit', 'sit', 'three', 'three', 'yellow', 'yellow', 'bed', 'bed', 'roads',
+// 'roads', 'grape', 'grape', 'floor', 'floor',
+// 'fox', 'fox'];
