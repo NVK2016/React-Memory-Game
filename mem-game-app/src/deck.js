@@ -9,6 +9,7 @@ function shuffle(array) {
         _array[i] = _array[randomIndex];
         _array[randomIndex] = temp;
     }
+    console.log(_array);
     return _array; 
 }
 export default function initializeDeck() {
@@ -29,7 +30,7 @@ export default function initializeDeck() {
             return acc
         }, []);
 
-    console.log(cards);
+    // console.log(cards);
 
     //Random order cards 
     return shuffle(cards);

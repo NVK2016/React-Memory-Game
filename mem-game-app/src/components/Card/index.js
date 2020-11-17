@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 //instead of sending props we are destructing to send the exact props required 
-function Card({ handleClick, id, flipped, type,  height, width }) {
-console.log(type, height,width)
+export default function Card({ handleClick, id, flipped, type,  height, width }) {
+// console.log(type, height,width)
     return (
         // <div className={`flip-container ${flipped ? "flipped" : ""}`}
         <div className="flip-container"
@@ -23,8 +23,6 @@ console.log(type, height,width)
         </div>
     )
 }
-
-export default Card; 
 
 Card.propTypes = {
     handleClick:PropTypes.func.isRequired, 

@@ -9,7 +9,7 @@ function Board({ dimension, cards, flipped, handleClick }) {
             {
                 cards.map((card) => {
                     // console.log(card);
-                    <Card
+                    return (<Card
                         key={card.id}
                         id={card.id}
                         //basically holds the text value of the card 
@@ -20,7 +20,7 @@ function Board({ dimension, cards, flipped, handleClick }) {
                         //  front={"https://static.vecteezy.com/system/resources/thumbnails/000/553/435/small/apple_006.jpg"}
                         flipped={flipped.includes(card.id)}
                         handleClick={() => { handleClick(card.id) }}
-                    />
+                    />)
                 })
             }
         </div>

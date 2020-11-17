@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Board from "./components/Board";
-
 import initializeDeck from './deck';
+
 function App() {
   const [cards, setCards] = useState([])
   const [flipped, setFlipped] = useState([]);
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     resizeBoard()
     setCards(initializeDeck())
-    console.log("pp", cards);
+    // console.log("pp", cards);
   }, [])
 
   // console.log("App", cards)
@@ -30,9 +30,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Memory Game</h1>
-      <h2>Can you remember where the cards are?</h2>
+      <div className="App-header">
+        <h1>Memory Game</h1>
+        <h2>Can you remember where the cards are?</h2>
+      </div>
       <Board
+        dimension={dimension}
         cards={cards}
         flipped={flipped}
         handleClick={handleClick}
