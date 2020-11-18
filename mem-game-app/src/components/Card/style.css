@@ -35,9 +35,11 @@
 }
 
 .back {
-    z-index: 2;
+    /* z-index: 2; */
     transform: rotateY(0deg);
     color: white;
+    font-size: 25px;
+    text-align: middle;
 }
 
 .front {
