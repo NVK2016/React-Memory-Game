@@ -77,7 +77,17 @@ function App() {
       )
     )
   }
-
+  const restartGame = () => {
+		// this.setState({
+			// gameStarted: false,
+			setCards(initializeDeck())
+			setDisabled(false); 
+			setDimension(400); 
+			setFlipped([]); 
+      setSolved([]); 
+      resizeBoard();
+    }
+    
   return (
     <div className="App">
       <div className="App-header">
@@ -92,7 +102,7 @@ function App() {
         disabled={disabled}
         solved={solved}
       />
-      <button>Play Again {solved}</button>
+      <button className="" onClick={restartGame}>Play Again?</button>
     </div>
   );
 }
