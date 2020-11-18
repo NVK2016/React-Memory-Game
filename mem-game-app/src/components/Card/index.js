@@ -11,13 +11,14 @@ export default function Card({ handleClick, id, disabled, flipped, solved, type,
             style={{ width, height }}
             onClick={() => (disabled ? null : handleClick(id))}>
             <div className="flipper">
-                {/* <h3>Sample Card - {type}</h3> */}
+                {/* backside of the card  */}
+                <p  className={flipped ? "back" : "front"} >{type}</p>
                 <img 
                 alt={type}
                 style={{ width, height }} 
                 className={flipped ? "front" : "back"} 
                 // src={ flipped ? front : back}
-                src={ flipped || solved ?  type : "/images/apple_006.jpg"}
+                src={ flipped || solved ?  {type} : "/images/apple_006.jpg"}
                  />
             </div>
         </div>

@@ -16,6 +16,7 @@ function App() {
     resizeBoard()
     setCards(initializeDeck())
     // console.log("pp", cards);
+    preloadImages();
   }, [])
 
   useEffect(() => {
@@ -23,6 +24,14 @@ function App() {
     //componet didunmout()  we have use return keywork here 
     return () => window.removeEventListener('resize', resizeListener)
   });
+  
+  const preloadImages = () => {
+    console.log(cards.length)
+    cards.map(card => {
+      const src = `/images/${card.type}.png`
+      new Image().src = src
+    })
+  }
   // console.log("App", cards)
   const handleClick = (id) => {
     setDisabled(true);
@@ -83,6 +92,7 @@ function App() {
         disabled={disabled}
         solved={solved}
       />
+      <button>Play Again {solved}</button>
     </div>
   );
 }

@@ -15,9 +15,7 @@ function shuffle(array) {
 export default function initializeDeck() {
     console.log("initializeDeck")
     let id = 0;
-    const cards = ['dog', 'dog', 'hand', 'hand', 
-         'books', 'books', 'sky', 'sky', 'apple', 'apple',
-        'door', 'door', 'cat', 'cat', 'foot', 'foot', 
+    const cards = [
          'orange', 'orange', 'toys', 'toys', 'trees', 'trees', 
         'three', 'three', 'yellow', 'yellow', 'grape', 'grape', 'floor', 'floor',
         'fox', 'fox'].reduce((acc, type) => {
